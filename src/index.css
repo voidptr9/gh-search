@@ -9,8 +9,8 @@ html {
   );
 }
 
-/* The glassy effect is adopted from https://css.glass */
-.gh-search-tab {
+/* The glassy effect is adapted from https://css.glass */
+.glassy {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

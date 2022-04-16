@@ -14,16 +14,16 @@ const Tabs = () => {
     Search: <SearchTab />,
     Trending: <b>wow</b>,
   });
-  const [category, setCategory] = useState("Search");
-
-  // console.log(category);
+  const [, setCategory] = useState("Search");
 
   return (
     <div
       style={{ margin: "0 auto" }}
       className="w-full max-w-md px-2 py-10 sm:px-0 justify-center">
       <Tab.Group>
-        <Tab.List className="flex p-1 space-x-1 bg-blue-900/20 rounded-xl">
+        <Tab.List
+          id="search-tab"
+          className="transition flex p-1 space-x-1 bg-blue-900/20 rounded-xl">
           {tabGroup.map(cat => (
             <Tab
               key={cat}
@@ -45,9 +45,9 @@ const Tabs = () => {
             <Tab.Panel
               key={idx}
               className={classNames(
-                "gh-search-tab",
+                "glassy",
                 "bg-white rounded-xl p-3",
-                "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
+                "px-2.5 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
               )}>
               {comp}
             </Tab.Panel>
