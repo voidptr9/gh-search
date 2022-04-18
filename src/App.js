@@ -22,7 +22,6 @@ const Tabs = () => {
       className="w-full max-w-md px-2 py-10 sm:px-0 justify-center">
       <Tab.Group>
         <Tab.List
-          id="search-tab"
           className="transition flex p-1 space-x-1 bg-blue-900/20 rounded-xl">
           {tabGroup.map(cat => (
             <Tab
