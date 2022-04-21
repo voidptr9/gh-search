@@ -1,18 +1,30 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import { SearchTab } from "./components/SearchTab";
+import { TrendingTab } from "./components/TrendingTab";
 
 export function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const tabGroup = ["Recent", "Search", "Trending"];
+const tabGroup = ["Search", "Recent", "Trending"];
 
 const Tabs = () => {
   let [categories] = useState({
-    Recent: <div>recenttttt</div>,
     Search: <SearchTab />,
-    Trending: <b>wow</b>,
+    Recent: (
+      <div>
+        TODO: Use{" "}
+        <a
+          href="https://github.com/tusharf5/runtime-memcache"
+          target="_blank"
+          rel="noreferrer">
+          <code>runtime-memcache</code>
+        </a>{" "}
+        for an LRU cache backed by local storage.
+      </div>
+    ),
+    Trending: <TrendingTab />,
   });
   const [, setCategory] = useState("Search");
 
@@ -21,8 +33,7 @@ const Tabs = () => {
       style={{ margin: "0 auto" }}
       className="w-full max-w-md px-2 py-10 sm:px-0 justify-center">
       <Tab.Group>
-        <Tab.List
-          className="transition flex p-1 space-x-1 bg-blue-900/20 rounded-xl">
+        <Tab.List className="transition flex p-1 space-x-1 bg-blue-900/20 rounded-xl">
           {tabGroup.map(cat => (
             <Tab
               key={cat}
@@ -62,7 +73,7 @@ export const App = () => {
     <main>
       <header className="mt-20 text-blue-200 text-center">
         <h1 className="text-xl font-medium">GitHub Search</h1>
-        <h3 className="text-lg">
+        <h3 className="text-lg p-5">
           Search users and organizations like it's 2022!
         </h3>
       </header>

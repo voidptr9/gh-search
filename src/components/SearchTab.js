@@ -16,7 +16,7 @@ function paginate(users, currentIndex, setCurrentIndex) {
   const partitionedUsers = partition(users, MAX_PAGINATION_COUNT);
 
   function navigatePrevious() {
-    if (currentIndex > 1) {
+    if (currentIndex >= 1) {
       setCurrentIndex(currentIndex - 1);
     }
   }
